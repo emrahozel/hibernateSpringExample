@@ -46,6 +46,14 @@ CREATE TABLE `user` (
   `enabled` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+INSERT INTO `user` (`username`,`password`,`enabled`) VALUES ('admin','$2a$10$Y5cBu220IP.45mwZydx26.p0n3ePjBgDbQ/mt8YMhLi.X2JAD5yDC',1);
+
+INSERT INTO `role` (`user_role_id`,`username`,`role`) VALUES (18,'admin','ROLE_ADMIN');
 ```
+
+login: kullanici adi = 'admin', password='password'
+
+
 
     
