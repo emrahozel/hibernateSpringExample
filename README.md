@@ -2,8 +2,11 @@
 Spring ve hibernate kullanilarak gelistirilmis ornek bir projedir. Projede primefaces ve mysql kullanilmistir.
 
 #Gereksinimler
+
     1. Tomcat 7
+    
     2. Mysql Server
+    
 >Login olabilmek ve Veri kaydedebilmek icin veritabani ve tablolari olusturulmalidir. Create Scriptleri;
 
 ```
