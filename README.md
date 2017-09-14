@@ -55,7 +55,10 @@ INSERT INTO `user` (`username`,`password`,`enabled`) VALUES ('admin','$2a$10$Y5c
 INSERT INTO `role` (`user_role_id`,`username`,`role`) VALUES (18,'admin','ROLE_ADMIN');
 ```
 
-login: kullanici adi = 'admin', password='password'
+<img width="1440" alt="ekran resmi 2017-09-14 16 26 34" src="https://user-images.githubusercontent.com/28479025/30432161-7e1964d6-9969-11e7-8aff-4440e8e800de.png">
+
+
+kullanici adi = 'admin', password='password'
 
 
 
