@@ -4,7 +4,7 @@ Spring ve hibernate kullanilarak gelistirilmis ornek bir projedir. Projede prime
 #Gereksinimler
     1. Tomcat 7
     2. Mysql Server
-    >Login olabilmek ve Veri kaydedebilmek icin veritabani ve tablolari olusturulmalidir. Create Scriptleri;
+>Login olabilmek ve Veri kaydedebilmek icin veritabani ve tablolari olusturulmalidir. Create Scriptleri;
 
 ```
 CREATE DATABASE envanter;
