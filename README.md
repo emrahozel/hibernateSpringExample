@@ -64,7 +64,7 @@ INSERT INTO `role` (`user_role_id`,`username`,`role`) VALUES (18,'admin','ROLE_A
 <img width="1440" alt="ekran resmi 2017-09-14 16 26 34" src="https://user-images.githubusercontent.com/28479025/30432161-7e1964d6-9969-11e7-8aff-4440e8e800de.png">
 
 
-kullanici adi = 'admin', password='password'
+kullanici adi = 'admin', Sifre='password'
 
 
 
