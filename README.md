@@ -3,7 +3,7 @@ Spring ve hibernate kullanilarak gelistirilmis ornek bir projedir. Projede prime
 
 #Gereksinimler
 
-    1. Tomcat 7
+    1. Tomcat 7 Server
     
     2. Mysql Server
     
