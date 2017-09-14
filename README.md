@@ -2,14 +2,15 @@
 Spring ve hibernate kullanilarak gelistirilmis ornek bir projedir. Projede primefaces ve mysql kullanilmistir.
 
 #Gereksinimler
-  -Tomcat 7 
+  -**Tomcat 7
   -Mysql Server
-    Login olabilmek ve Veri kaydedebilmek icin veritabani ve tablolari olusturulmalidir. Create Scriptleri;
+    Login olabilmek ve Veri kaydedebilmek icin veritabani ve tablolari olusturulmalidir. Create Scriptleri;**
 
+```
 CREATE DATABASE envanter;
 
 delimiter $$
-```
+
 CREATE TABLE `envanter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kullanici` varchar(45) NOT NULL,
