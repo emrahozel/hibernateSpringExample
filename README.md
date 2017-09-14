@@ -1,6 +1,9 @@
 # hibernateSpringExample
 Spring ve hibernate kullanilarak gelistirilmis ornek bir projedir. Projede primefaces ve mysql kullanilmistir.
 
+<img width="1439" alt="ekran resmi 2017-09-14 14 59 38" src="https://user-images.githubusercontent.com/28479025/30431926-c75a46b6-9968-11e7-87a7-a6043ec2817b.png">
+
+
 #Gereksinimler
 
     1. Tomcat 7 Server
