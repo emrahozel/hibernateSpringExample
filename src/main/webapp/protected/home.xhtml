@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>Spring Hibernate Example</title>
+        </f:facet>
+    </h:head>
+
+    <h:body style="background-color: black">
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-2">
+                <h:form id="registerForm">
+                    <p:panel id="panel" header="Envanter Bilgileri" style="font-size: 15px">
+                        <h:panelGrid id="grid" columns="1" cellpadding="0" cellspacing="0">
+                            <h:outputLabel for="kullanici" value="Kullanıcı:" />
+                            <p:inputText value="#{bean.article.kullanici}" id="kullanici" label="kullanici" />
+                            <h:outputLabel for="bolum" value="Birim:" />
+                            <p:inputText value="#{bean.article.birimi}" id="bolum" label="bolum" />
+                            <h:outputLabel for="malzemeadi" value="Malzeme Adı:" />
+                            <p:inputText value="#{bean.article.malzemeAdi}" id="malzemeadi" label="malzemeadi" />
+                            <h:outputLabel for="marka" value="Marka:" />
+                            <p:inputText value="#{bean.article.marka}" id="marka" label="marka" />
+                            <h:outputLabel for="model" value="Model:" />
+                            <p:inputText value="#{bean.article.model}" id="model" label="model" />
+                            <h:outputLabel for="serino" value="Seri No:" />
+                            <p:inputText value="#{bean.article.seriNo}" id="serino" label="serino" />
+                            <h:outputLabel for="adet" value="Adet:" />
+                            <p:inputText value="#{bean.article.adet}" id="adet" label="adet">
+                                <f:validateDoubleRange minimum="0" maximum="1000000" />
+                            </p:inputText>
+                            <p:message for="adet" />
+                            <p:messages autoUpdate="true" />
+                        </h:panelGrid>
+                        <p:spacer />
+                        <h:panelGrid columns="2">
+                            <p:commandButton style="font-size: 12px" id="kaydet" value="Kaydet" disabled="#{bean.select != null}" action="#{bean.save}" update="panel :datatable" icon="ui-icon-disk" validateClient="true"/>
+                            <p:commandButton style="font-size: 12px" value="Guncelle" action="#{bean.update}" disabled="#{bean.select == null}" update=":datatable" icon="ui-icon-close"/>
+                            <p:commandButton style="font-size: 12px" value="Sil" action="#{bean.delete}" disabled="#{bean.select == null}" update=":datatable" icon="ui-icon-close"/>
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </div>
+            <div class="ui-g-12 ui-md-10">
+                    <h:form id="datatable">
+                        <p:dataTable paginator="true" paginatorPosition="top"  style="font-size: 13px; text-align: center;" id="tbl" rows="50" widgetVar="t" var="data" paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}"
+                                     value="#{bean.envanterList}" rowKey="#{data.id}" selectionMode="single" selection="#{bean.select}">
+                            <f:facet name="header">
+                                <p:outputPanel style="text-align: right">
+                                    <p:inputText id="globalFilter" onkeyup="PF('t').filter()" style="width:250px" placeholder="Enter keyword"/>
+                                </p:outputPanel>
+                            </f:facet>
+                            <p:ajax event="rowSelect" listener="#{bean.selectEvent}" update=":registerForm:panel" />
+                            <p:column headerText="Id">
+                                <h:outputText value="#{data.id}" />
+                            </p:column>
+                            <p:column headerText="Kullanici" filterBy="#{data.kullanici}" filterStyle="display:none; visibility:hidden;">
+                                <h:outputText value="#{data.kullanici}" />
+                            </p:column>
+                            <p:column headerText="Birim" filterBy="#{data.birimi}" filterStyle="display:none; visibility:hidden;">
+                                <h:outputText value="#{data.birimi}" />
+                            </p:column>
+                            <p:column headerText="Mlz Adi" filterBy="#{data.malzemeAdi}" filterStyle="display:none; visibility:hidden;">
+                                <h:outputText value="#{data.malzemeAdi}" />
+                            </p:column>
+                            <p:column headerText="Model" filterBy="#{data.model}" filterStyle="display:none; visibility:hidden;">
+                                <h:outputText value="#{data.model}" />
+                            </p:column>
+                            <p:column headerText="Marka" filterBy="#{data.marka}" filterStyle="display:none; visibility:hidden;">
+                                <h:outputText value="#{data.marka}" />
+                            </p:column>
+                            <p:column headerText="Seri No" filterBy="#{data.seriNo}" filterStyle="display:none; visibility:hidden;">
+                                <h:outputText value="#{data.seriNo}" />
+                            </p:column>
+                            <p:column headerText="Adet">
+                                <h:outputText value="#{data.adet}" />
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+            </div>
+        </div>
+    </h:body>
+
+</f:view>
+</HTML>
+
