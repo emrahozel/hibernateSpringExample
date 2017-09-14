@@ -9,7 +9,7 @@ Spring ve hibernate kullanilarak gelistirilmis ornek bir projedir. Projede prime
 CREATE DATABASE envanter;
 
 delimiter $$
-'
+```
 CREATE TABLE `envanter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `kullanici` varchar(45) NOT NULL,
@@ -42,7 +42,6 @@ CREATE TABLE `user` (
   `enabled` tinyint(4) NOT NULL DEFAULT '1',
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
-'
-
+```
 
     
